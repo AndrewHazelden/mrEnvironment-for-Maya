@@ -1,0 +1,83 @@
+global proc shelf_Environments () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 56
+        -height 54
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Env Cube 1" 
+        -enableBackground 0
+        -align "center" 
+        -label "EnvCube1" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "render_cube1.xpm" 
+        -image1 "render_cube1.xpm" 
+        -style "iconAndTextVertical" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "print(\"Creating a mib_lookup_cube1 environment map\")\nimport mrEnvironment as autoEnv\nautoEnv.createMrCube1()\n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 56
+        -height 54
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "EnvCube6" 
+        -enableBackground 0
+        -align "center" 
+        -label "EnvCube6" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "render_cube6.xpm" 
+        -image1 "render_cube6.xpm" 
+        -style "iconAndTextVertical" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "print(\"Creating a mib_lookup_cube6 environment map\")\nimport mrEnvironment as autoEnv\nautoEnv.createMrCube6()\n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 58
+        -height 54
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "EnvSphere" 
+        -enableBackground 0
+        -align "center" 
+        -label "EnvSphere" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "render_sphere.xpm" 
+        -image1 "render_sphere.xpm" 
+        -style "iconAndTextVertical" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "print(\"Creating a mib_lookup_spherical environment map\")\nimport mrEnvironment as autoEnv\nautoEnv.createMrSphere()\n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+
+} 
