@@ -39,14 +39,14 @@ To assign the environment shader to a specific material's shading group, open th
 
 ##Mac OS X Install
 
-1. Copy the icons to your user account's Maya icons folder:
-~/Library/Preferences/Autodesk/maya/2013-x64/prefs/icons/
+1. Copy the icons to your user account's Maya icons folder:  
+	> ~/Library/Preferences/Autodesk/maya/2013-x64/prefs/icons/  
 
-2. Copy the python scripts `__init__.py` and `mrEnvironment.py` from the "scripts" folder to your user account's Maya script folder:
-~/Library/Preferences/Autodesk/maya/2013-x64/prefs/scripts
+2. Copy the python scripts `__init__.py` and `mrEnvironment.py` from the "scripts" folder to your user account's Maya script folder:  
+	> ~/Library/Preferences/Autodesk/maya/2013-x64/prefs/scripts
 
-3. Copy the `shelf_Environments.mel` file from the "shelves" folder to your user account's Maya shelves folder:
-~/Library/Preferences/Autodesk/maya/2013-x64/prefs/shelves
+3. Copy the `shelf_Environments.mel` file from the "shelves" folder to your user account's Maya shelves folder:  
+	> ~/Library/Preferences/Autodesk/maya/2013-x64/prefs/shelves
 
 4. (optional) Copy the sample environment map textures to your current Maya project's sourceimages folder.
 
@@ -54,28 +54,28 @@ To assign the environment shader to a specific material's shading group, open th
 
 ##Windows Install
 
-1. Copy the icons to your user account's Maya icons folder:
-My Documents\maya\2013\prefs\icons\
+1. Copy the icons to your user account's Maya icons folder:  
+	> My Documents\maya\2013\prefs\icons\  
 
-2. Copy the python scripts `__init__.py` and `mrEnvironment.py` from the "scripts" folder to your user account's Maya script folder:
-My Documents\maya\2013\prefs\scripts
+2. Copy the python scripts `__init__.py` and `mrEnvironment.py` from the "scripts" folder to your user account's Maya script folder:  
+	> My Documents\maya\2013\prefs\scripts  
 
-3. Copy the `shelf_Environments.mel` file from the "shelves" folder to your user account's Maya shelves folder:
-My Documents\maya\2013\prefs\shelves
+3. Copy the `shelf_Environments.mel` file from the "shelves" folder to your user account's Maya shelves folder:  
+	> My Documents\maya\2013\prefs\shelves  
 
 4. (optional) Copy the sample environment map textures to your current Maya project's sourceimages folder.
 
 
 ##Linux Install
 
-1. Copy the icons to your user account's Maya icons folder:
-~/maya/2013-x64/prefs/shelves/icons
+1. Copy the icons to your user account's Maya icons folder:  
+	> ~/maya/2013-x64/prefs/shelves/icons  
 
-2. Copy the python scripts `__init__.py` and `mrEnvironment.py` from the "scripts" folder to your user account's Maya script folder:
-~/maya/2013-x64/prefs/scripts
+2. Copy the python scripts `__init__.py` and `mrEnvironment.py` from the "scripts" folder to your user account's Maya script folder:  
+	> ~/maya/2013-x64/prefs/scripts
 
-3. Copy the `shelf_Environments.mel` file from the "shelves" folder to your user account's Maya shelves folder:
-~/maya/2013-x64/prefs/shelves
+3. Copy the `shelf_Environments.mel` file from the "shelves" folder to your user account's Maya shelves folder:  
+	> ~/maya/2013-x64/prefs/shelves
 
 4. (optional) Copy the sample environment map textures to your current Maya project's sourceimages folder.
 
@@ -100,7 +100,7 @@ The place3DTetxure node starts with a value of RotateX -90 to orient the environ
 
 ###mib\_lookup\_cube1 Setup
 
-The mib_lookup_cube1 node expects the single texture map to be oriented in a horizontal strip format with the cube map face order of:  
+The `mib_lookup_cube1` node expects the single texture map to be oriented in a horizontal strip format with the cube map face order of:  
 1 Left  
 2 Back  
 3 Bottom  
@@ -113,17 +113,17 @@ The mib_lookup_cube1 node expects the single texture map to be oriented in a hor
 If your Cubicmap face textures are 1024x1024px then the horizontal cubemap strip would have the dimensions of 6144x1024px.
 
 Node Connections:  
-`
-mib_texture_vector.outValue > mib_texture_remap.input   
-mib_texture_remap.outValue > mib_lookup_cube1.dir  
-place3dTexture.worldInverseMatrix[0] > mib_texture_remap.transform  
-`
+
+`mib_texture_vector.outValue > mib_texture_remap.input`  
+`mib_texture_remap.outValue > mib_lookup_cube1.dir`  
+`place3dTexture.worldInverseMatrix[0] > mib_texture_remap.transform`  
+
 
 Texture Map Connection Summary:  
-`mentalrayTexture.message > mib_lookup_cube1.tex`
+`mentalrayTexture.message > mib_lookup_cube1.tex`  
 
 Camera Connections:  
-`mib_lookup_cube1.message > perspShape.miEnvironmentShader`
+`mib_lookup_cube1.message > perspShape.miEnvironmentShader`  
 
 ![](https://raw.github.com/AndrewHazelden/mrEnvironment-for-Maya/master/screenshots/cube1.png)
 
@@ -131,22 +131,20 @@ Camera Connections:
 
 ###mib\_lookup\_cube6 Setup
 
-Node Connections:  	
-`
-mib_texture_vector.outValue > mib_texture_remap.input  
-place3dTexture.worldInverseMatrix[0] > mib_texture_remap.transform  
-mib_texture_remap.outValue > mib_lookup_cube6.dir  
-`
+Node Connections:  
+`mib_texture_vector.outValue > mib_texture_remap.input`
+`place3dTexture.worldInverseMatrix[0] > mib_texture_remap.transform`  
+`mib_texture_remap.outValue > mib_lookup_cube6.dir`  
+
 	
-Texture Map Connection Summary:	 
-`
-left_env_mentalrayTexture1 > mib_lookup_cube6.tex_mx  
-right_env_mentalrayTexture1 > mib_lookup_cube6.tex_px  
-bottom_env_mentalrayTexture1 > mib_lookup_cube6.tex_my  
-top_env_mentalrayTexture1 > mib_lookup_cube6.tex_py  
-front_env_mentalrayTexture1 > mib_lookup_cube6.tex_mz  
-back_env_mentalrayTexture1 > mib_lookup_cube6.tex_pz  
-`
+Texture Map Connection Summary:	   
+`left_env_mentalrayTexture1 > mib_lookup_cube6.tex_mx`  
+`right_env_mentalrayTexture1 > mib_lookup_cube6.tex_px`  
+`bottom_env_mentalrayTexture1 > mib_lookup_cube6.tex_my`  
+`top_env_mentalrayTexture1 > mib_lookup_cube6.tex_py`  
+`front_env_mentalrayTexture1 > mib_lookup_cube6.tex_mz`  
+`back_env_mentalrayTexture1 > mib_lookup_cube6.tex_pz`  
+
 	
 Camera Connections:  
 `mib_lookup_cube6.message > perspShape.miEnvironmentShader` 
@@ -158,17 +156,17 @@ Camera Connections:
 ###mib\_lookup\_spherical Setup
 
 Node Connection Summary:  
-`
-mib_texture_vector.outValue > mib_texture_remap.input  
-mib_texture_remap.outValue > env_mib_lookup_spherical.dir  
-place3dTexture.worldInverseMatrix[0] > mib_texture_remap.transform  
-`
+
+`mib_texture_vector.outValue > mib_texture_remap.input`  
+`mib_texture_remap.outValue > env_mib_lookup_spherical.dir`  
+`place3dTexture.worldInverseMatrix[0] > mib_texture_remap.transform`  
+
 
 Texture Map Connection Summary:  
-`mentalrayTexture.message > env_mib_lookup_spherical.tex`   
+`mentalrayTexture.message > env_mib_lookup_spherical.tex`    
 
 Camera Connections:  
-`env_mib_lookup_spherical.message > perspShape.miEnvironmentShader`  
+`env_mib_lookup_spherical.message > perspShape.miEnvironmentShader`    
 
 ![mib lookup spherical node](https://raw.github.com/AndrewHazelden/mrEnvironment-for-Maya/master/screenshots/mib_lookup_spherical.png)
 
