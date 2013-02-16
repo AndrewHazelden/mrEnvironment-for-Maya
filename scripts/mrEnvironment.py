@@ -1,5 +1,5 @@
 """
-MrEnvironment script V1.0
+MrEnvironment script V1.1
 --------------------------------
 Created by Andrew Hazelden  andrew@andrewhazelden.com
 
@@ -19,6 +19,8 @@ Version History
 Version 1.0 Beta - Released Jan 7, 2013
 Created first version of the mental ray environment creation script, icons, and shelf.
 
+Version 1.1 - Released Feb 16, 2013
+Updated python code to fix cube6 face order issue.
 
 
 """
@@ -176,8 +178,8 @@ def createMrCube6():
 	# right_env_mentalrayTexture1 > mib_lookup_cube6.tex_px
 	# bottom_env_mentalrayTexture1 > mib_lookup_cube6.tex_my
 	# top_env_mentalrayTexture1 > mib_lookup_cube6.tex_py
-	# front_env_mentalrayTexture1 > mib_lookup_cube6.tex_mz
-	# back_env_mentalrayTexture1 > mib_lookup_cube6.tex_pz
+	# back_env_mentalrayTexture1 > mib_lookup_cube6.tex_mz
+	# front_env_mentalrayTexture1 > mib_lookup_cube6.tex_pz
 	
 	# Camera Connections:
 	# mib_lookup_cube6.message > perspShape.miEnvironmentShader
@@ -197,8 +199,8 @@ def createMrCube6():
 	cmds.connectAttr( envMapRight_mr_tex+'.message', env_mib_lookup_cube6+'.tex_px' )
 	cmds.connectAttr( envMapBottom_mr_tex+'.message', env_mib_lookup_cube6+'.tex_my' )
 	cmds.connectAttr( envMapTop_mr_tex+'.message', env_mib_lookup_cube6+'.tex_py' )
-	cmds.connectAttr( envMapFront_mr_tex+'.message', env_mib_lookup_cube6+'.tex_mz' )
-	cmds.connectAttr( envMapBack_mr_tex+'.message', env_mib_lookup_cube6+'.tex_pz' )
+	cmds.connectAttr( envMapBack_mr_tex+'.message', env_mib_lookup_cube6+'.tex_mz' )
+	cmds.connectAttr( envMapFront_mr_tex+'.message', env_mib_lookup_cube6+'.tex_pz' )
 	
 	# Assign a default file name to each cubic face
 	cmds.setAttr( envMapLeft_mr_tex+'.fileTextureName', envMapLeftFileTexture , type="string")
